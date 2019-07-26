@@ -69,16 +69,17 @@ def highlightcode(lang, code):
 
 def main(input_file, out, style, name, render, codehighlight):
     if not os.path.isdir(out):
-        print(u'warning : %s is not a dir' % out)
+        print(u'warning : Output target %s is not a dictionary.' % out)
+        return
+
+	if not os.path.isfile(style):
+		print(u'warning : Style sheet %s is not file' % style)
         return
 
     if not name.endswith('.html'):
         name += '.html'
 
     out_path = os.path.join(out, name)
-    if not os.path.isfile(style):
-        print(u'warning : %s is not file' % style)
-        return
 
     in_f = codecs.open(input_file, 'r', 'utf-8')
     out_f = codecs.open(out_path, 'w', 'utf-8')
