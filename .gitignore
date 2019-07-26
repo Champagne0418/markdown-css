@@ -89,3 +89,6 @@ ENV/
 .ropeproject
 themes/public
 .DS_Store
+
+#visual studio
+.vs/
